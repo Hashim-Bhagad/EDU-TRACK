@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edu Track</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="sidenav">
+    <ul class="nav-list">
+      <img class="logo" src="Edu track Logo.svg" alt="Logo" />
+      <li class="nav-item">
+        <img class="Home-icon" src="Home-icon.svg" alt="Home Icon" />
+        <a class="nav-options" href="dashboard.html">Home</a>
+      </li>
+      <li class="nav-item Classes">
+        <img src="Classes-icon.svg" alt="Classes Icon" />
+        <a class="nav-options" href="class.html">Classes</a>
+      </li>
+      <li class="nav-item Statistics">
+        <img src="Reports-icon.svg" alt="Statistics Icon" />
+        <a class="nav-options" href="stats.html">Statistics</a>
+      </li>
+      <li class="nav-item Profile">
+        <img src="Profile-Icon (2).svg" alt="Profile Icon" />
+        <a class="nav-options" href="Profile.html">Profile</a>
+      </li>
+      <li class="nav-item Log-out">
+        <img src="Log-out.svg" alt="Log out Icon" />
+        <a class="nav-options" href="#" id="logoutBtn">Log Out</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="topnav">
+    <div class="message">
+      <p id="welcomeText">Welcome, Guest</p>
+      <p>Here's What Happened</p>
+    </div>
+    <div class="search">
+      <img src="Search-icon.svg" alt="Search Icon" />
+    </div>
+    <div class="notification">
+      <img src="Notification-icon.svg" alt="Notification Icon" />
+    </div>
+    <div class="profile">
+      <img src="Profile-icon.svg" alt="Profile Icon" />
+    </div>
+    <div class="toggle-switch">
+      <img src="Light mode.svg" alt="Light Mode" class="light" />
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider"></span>
+      </label>
+      <img src="Dark mode.svg" alt="Dark Mode" class="dark" />
+    </div>
+  </div>
+
+  <div class="dashboard-container">
+    <div class="overview-section">
+  <div class="card stat-card">
+    <h3>Total Students</h3>
+    <p>120</p>
+  </div>
+  <div class="card stat-card">
+    <h3>Total Classes</h3>
+    <p>8</p>
+  </div>
+  <div class="card stat-card">
+    <h3>Assignments Due</h3>
+    <p>5</p>
+  </div>
+</div>
+
+<div class="widgets-section">
+  <div class="card todo-card">
+    <h3>To-do List</h3>
+    <ul>
+      <li>Review Class 10 Grades</li>
+      <li>Update Student Info</li>
+      <li>Prepare Monthly Report</li>
+    </ul>
+  </div>
+
+  <div class="card announcement-card">
+    <h3>Announcements</h3>
+    <p>📢 PTA Meeting scheduled for Aug 10, 2025.</p>
+    <p>📢 New evaluation scheme to be shared soon.</p>
+  </div>
+    <div class="calendar-section">
+      <h2>Calendar</h2>
+      <iframe 
+        src="https://calendar.google.com/calendar/embed?src=your_calendar_id&ctz=Asia%2FKolkata" 
+        style="border: 0" 
+        width="100%" 
+        height="500px" 
+        frameborder="0" 
+        scrolling="no">
+      </iframe>
+    </div>
+  </div>
+
+  <script>
+    // Fetch user from localStorage
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (user && user.name) {
+      document.getElementById("welcomeText").textContent = `Welcome, ${user.name}`;
+    } else {
+      alert("No active session found. Please log in.");
+      window.location.href = "login.html";
+    }
+
+    // Log out functionality
+    document.getElementById("logoutBtn").addEventListener("click", function (e) {
+      e.preventDefault();
+      localStorage.removeItem("loggedInUser");
+      alert("You have been logged out.");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

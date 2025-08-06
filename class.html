@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #0097B2;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 20vw; /* Push the header to start after the sidenav */
+            width: 80vw; /* Match the remaining space after the sidenav */
+            z-index: 1000;
+        }
+
+        .sidenav {
+            height: 100vh;
+            width: 20vw;
+            background-color: #f3f3f3;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            padding-top: 1rem;
+        }
+
+        .logo {
+            width: 70%;
+            height: 10vh;
+            margin: 0 auto;
+        }
+
+        .nav-list {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 5vh;
+            margin-top: 5vh;
+        }
+
+        .nav-item {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-list li a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+
+        .nav-item:hover {
+            color: #EBBB20; /* Add yellow hover color */
+            transform: scale(1.1);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .sidenav .nav-list .nav-item:last-child {
+    position: absolute;
+    bottom: 5vh
+}
+
+        .container {
+            margin-left: 20vw; /* Leave space for the sidenav */
+            margin-top: 7rem; /* Avoid overlapping with the header */
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background-color: #f4f4f9;
+            height: calc(100vh - 7rem); /* Fill available height minus header height */
+            overflow-y: auto;
+        }
+
+        .class-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            flex: 1 1 calc(33.333% - 1rem);
+            height: fit-content;
+            width: fit-content;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .class-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .class-card-header {
+            background-color: #0097B2;
+            color: white;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .class-card-body {
+            padding: 1rem;
+        }
+
+        .class-card-footer {
+            background-color: #f4f4f9;
+            padding: 0.5rem 1rem;
+            text-align: right;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .class-card-footer:hover {
+            color: #EBBB20; /* Add yellow hover color to footer */
+        }
+
+        @media (max-width: 768px) {
+            .class-card {
+                flex: 1 1 calc(50% - 1rem);
+                max-width: calc(50% - 1rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .class-card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Classes</h1>
+    </header>
+    <div class="sidenav">
+        <ul class="nav-list">
+            <img class="logo" src="Edu track Logo.svg" alt="">
+            <li class="nav-item">
+                <img class="Home-icon" src="Home-icon.svg" alt="">
+                <a class="nav-options" href="dashboard.html">Home</a>
+            </li>
+            <li class="nav-item Classes">
+                <img src="Classes-icon.svg" alt="">
+                <a class="nav-options" href="class.html">Classes</a>
+            </li>
+            <li class="nav-item Statistics">
+                <img src="Reports-icon.svg" alt="">
+                <a class="nav-options" href="stats.html">Statistics</a>
+            </li>
+            <li class="nav-item Profile">
+                <img src="Profile-Icon (2).svg" alt="">
+                <a class="nav-options" href="Profile.html">Profile</a>
+            </li>
+            <li class="nav-item Log-out">
+                <img src="Log-out.svg" alt="">
+                <a class="nav-options" href="index.html">Log Out</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="class-card">
+            <div class="class-card-header">Matrices and Differential Calculus</div>
+            <div class="class-card-body">Instructor: Dr. Seema Bawnekar<br>Upcoming Assignment: Calculus Quiz</div>
+            <div class="class-card-footer">Last updated: Dec 10</div>
+        </div>
+        
+        <div class="class-card">
+            <div class="class-card-header">Applied Physics</div>
+            <div class="class-card-body">Instructor: Dr. Namrata Mangalani<br>Upcoming Assignment: Physics Project</div>
+            <div class="class-card-footer">Last updated: Dec 11</div>
+        </div>
+
+        <div class="class-card">
+            <div class="class-card-header">Principles of Digital Electronics</div>
+            <div class="class-card-body">Instructor: Amruta Kulkarni<br>Upcoming Assignment: CIA on Sequential Circuits</div>
+            <div class="class-card-footer">Last updated: Dec 9</div>
+        </div>
+    </div>
+</body>
+</html>

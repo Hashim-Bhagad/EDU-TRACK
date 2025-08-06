@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Statistics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #004aad;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .heading {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .card {
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 200px;
+            width: 100%;
+        }
+
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <a href="dashboard.html" class="back-button">Back</a>
+    <h1 class="heading">Student Statistics</h1>
+    <div class="container">
+        <div class="card">
+            <h2>Hashim Bhagad</h2>
+            <p>FYCM 1</p>
+            <div class="chart-container">
+                <canvas id="chart1"></canvas>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Kavya Bhatt</h2>
+            <p>FYCM 2</p>
+            <div class="chart-container">
+                <canvas id="chart2"></canvas>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Dhruv Ghanchi</h2>
+            <p>FYCM 3</p>
+            <div class="chart-container">
+                <canvas id="chart3"></canvas>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Piyush Bedekar</h2>
+            <p>IT</p>
+            <div class="chart-container">
+                <canvas id="chart4"></canvas>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Manish Badhe</h2>
+            <p>ECS</p>
+            <div class="chart-container">
+                <canvas id="chart5"></canvas>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Ayushi Bhanushali</h2>
+            <p>ACT</p>
+            <div class="chart-container">
+                <canvas id="chart6"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const createChart = (canvasId, labels, data) => {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Performance',
+                        data: data,
+                        borderColor: '#4CAF50',
+                        backgroundColor: 'rgba(76, 175, 80, 0.2)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Subjects'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Scores'
+                            },
+                            min: 0,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        };
+
+        createChart('chart1', ['MDC', 'Physics', 'PDE', 'SBWT'], [85, 90, 78, 88]);
+        createChart('chart2', ['MDC', 'Physics', 'PDE', 'SBWT'], [70, 75, 80, 85]);
+        createChart('chart3', ['MDC', 'Physics', 'PDE', 'SBWT'], [95, 88, 92, 85]);
+        createChart('chart4', ['MDC', 'Physics', 'PDE', 'SBWT'], [65, 70, 60, 75]);
+        createChart('chart5', ['MDC', 'Physics', 'PDE', 'SBWT'], [88, 92, 85, 90]);
+        createChart('chart6', ['MDC', 'Physics', 'PDE', 'SBWT'], [75, 80, 70, 78]);
+        const back_button=document.querySelector("back-button");
+        if (back_button) {
+            back_button.addEventListener("click", ()=>{
+                window.location.assign("dasboard.html")
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="sidenav">
+        <ul class="nav-list">
+            <img class="logo" src="Edu Track Logo.svg" alt="">
+            <li class="nav-item">
+                <img class="Home-icon" src="Home-icon.svg" alt="">
+                <a class="nav-options" href="dashboard.html">Home</a>
+            </li>
+            <li class="nav-item Classes">
+                <img src="Classes-icon.svg" alt="">
+                <a class="nav-options" href="class.html">Classes</a>
+            </li>
+            <li class="nav-item Statistics">
+                <img src="Reports-icon.svg" alt="">
+                <a class="nav-options" href="stats.html">Statistics</a>
+            </li>
+            <li class="nav-item Profile">
+                <img src="Profile-Icon (2).svg" alt="">
+                <a class="nav-options" href="Profile.html">Profile</a>
+            </li>
+            <li class="nav-item Log-out">
+                <img src="Log-out.svg" alt="">
+                <a class="nav-options" href="index.html">Log Out</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="profile-container">
+        <img class="profile-logo" src="Profile-Icon (2).svg" alt="Profile Logo"> <!-- Profile Logo -->
+        <div style="text-align: center;" class="profile-header">
+            <h1 style="text-align: center;" id="username-display">Profile Details</h1>
+            
+        </div>
+        <button id="edit-btn" class="edit-btn">Edit Profile</button>
+        <div class="profile-content">
+            <div class="profile-field">
+                <label for="username">Username:</label>
+                <span id="username-value">Hashim_Bhagad</span>
+                <input type="text" id="username-input" class="hidden" value="Hashim_Bhagad">
+            </div>
+            <div class="profile-field">
+                <label for="email">Email:</label>
+                <span id="email-value">Hashim@gmail.com</span>
+                <input type="email" id="email-input" class="hidden" value="hashim@gmail.com">
+            </div>
+            <div class="profile-field">
+                <label for="bio">Bio:</label>
+                <span id="bio-value">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                <textarea id="bio-input" class="hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea>
+            </div>
+            <div id="save-cancel" class="hidden">
+                <button id="save-btn" class="save-btn">Save</button>
+                <button id="cancel-btn" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

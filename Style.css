@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: sticky;
+    width: auto;
+    background-color: #f8f8f8; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    height: 70px; 
+    z-index: 10; 
+}
+
+.navbar img {
+    position: absolute;
+left: 10px;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-item a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.nav-item {
+    margin-right: 100px;
+    font-size: 22px;
+}
+.nav-item:hover{
+    transform: scale(1.2) ;
+}
+
+.nav-item:last-child {
+    margin-right: 0;
+}
+
+img {
+    height: 89px;
+    width: 94px;
+}
+.buttons{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+}
+
+button{
+    margin: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+    padding: 12px 20px;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    font-weight: bold;
+}
+.Log-in{
+    background-color: #0097B2;
+}
+.Log-in:hover{
+    color: black;
+    border: 2px solid black;
+    transform: scale(1.1);
+}
+.Sign-up{
+    background-color: #EBBB20;
+  
+}
+.Sign-up:hover{
+    color: black;
+    border: 2px solid black;
+    transform: scale(1.1);
+}
+.container-1{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+   
+}
+.container-2{
+    gap: 7vw;
+}
+.Home-page{
+    height: 340px;
+    width: 535px;
+    margin-top: 60px;
+    z-index: 10;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-right: 15px;
+}
+.Home-page-text{
+    margin-top: 60px;
+}
+.Heading-1{
+    font-weight: 700;
+    font-size: 50px;
+    margin-bottom: 20px;
+    margin-left: 5vw;
+}
+.Heading-text{
+font-size: 20px;
+font-weight: 300;
+margin-left: 5vw;
+}
+.About-us{
+    height: 444px ;
+    width: 323px ;
+    margin-top: 70px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-left: 15px;
+    object-fit: cover;
+    overflow: hidden;
+}
+.Heading-2{
+    font-weight: 600;
+    font-size: 50px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    margin-left: 25px;
+    text-align: center;
+}
+.Heading-2-text{
+    font-size: 20px;
+    font-weight: 300;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 25px;
+    text-align: center;
+    }
+    .Heading-3{
+        text-align: center;
+        font-size: 50px;
+    }
+    .Heading-3-text{
+        text-align: center;
+        font-size: 20px;
+    }
+    .services-image {
+        position: relative;
+        width: 100%; /* Adjust to fit your container */
+        height: auto; /* Adjust as needed */
+    }
+    
+    .services-1, .services-2 {
+        position: absolute;
+        top: 0; /* Aligns both images at the top */
+        left: 0; /* Aligns both images to the left */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+
+    }
+    
+    .services-2 {
+        z-index: 1; /* Places the second image above the first */
+        width: 40vw;
+        left: 40vw;
+       
+        height: max-content;
+    }
+    
+    .services-1 {
+        z-index: -1; /* Places the first image below the second */
+        width: 40vw;
+        left: 20vw;
+        height: max-content;
+        top: 10vw;
+        margin-bottom: 20vh;
+    }
+    .container-1, .container-2, .container-3 {
+        flex-grow: 1; /* Ensures that the main content takes up the remaining height */
+    }
+    .break{
+        height: 60vh;
+    }
+    .footer{
+        margin-top: 5vh;
+        background-color: #f8f8f8;
+        bottom: 0;
+        height: 10vh;
+        width: 100%;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        
+        z-index: 5;
+        margin-top: 20vh;
+    }
+    
